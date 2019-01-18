@@ -10,13 +10,13 @@ export class DashboardPage implements OnInit {
   rootPage: any = 'LoginPage';
   public appPages = [
     {
-      title: 'Home',
-      url: '/home',
+      title: 'dashboard',
+      url: '/dashboard',
       icon: 'home'
     },
     {
-      title: 'List',
-      url: '/list',
+      title: 'barcode',
+      url: '/barcode',
       icon: 'list'
     }
   ];
