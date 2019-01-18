@@ -1,0 +1,69 @@
+<ion-grid>
+  <ion-row justify-content-center>
+    <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+      <form (ngSubmit)="login()" #registerForm="ngForm">
+        <div text-center>
+          <h4>iTechnologies</h4>
+        </div>
+        <div padding>
+          <ion-item>
+            <ion-input type="text" placeholder="Username" [(ngModel)]="registerCredentials.username" [ngModelOptions]="{standalone: true}"
+              required></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-input type="password" placeholder="Password" [(ngModel)]="registerCredentials.password"
+              [ngModelOptions]="{standalone: true}" required></ion-input>
+          </ion-item>
+        </div>
+
+        <div padding>
+          <ion-button size="large" full type="submit" expand="block" [disabled]="!registerForm.form.valid">Login</ion-button>
+        </div>
+      </form>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+
+<!-- <ion-content class="login-content" padding>
+  <ion-row class="logo-row">
+    <ion-col></ion-col>
+    <ion-col width-67>
+      <img src="http://placehold.it/300x200" />
+    </ion-col>
+    <ion-col></ion-col>
+  </ion-row>
+  <div class="login-box">
+    <form (ngSubmit)="login()" #registerForm="ngForm">
+      <ion-row>
+        <ion-col>
+          <ion-list inset>
+
+            <ion-item>
+              <ion-input type="text" placeholder="Email" name="email" [(ngModel)]="registerCredentials.email" required></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-input type="password" placeholder="Password" name="password" [(ngModel)]="registerCredentials.password"
+                required></ion-input>
+            </ion-item>
+
+          </ion-list>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col class="signup-col">
+          <button ion-button class="submit-btn" full type="submit" [disabled]="!registerForm.form.valid">Login</button>
+          <button ion-button class="submit-btn" block clear (click)="createAccount()">Create New Account</button>
+        </ion-col>
+      </ion-row>
+
+    </form>
+  </div>
+</ion-content> -->
+
+<!-- <ion-content padding>
+  <ion-button (click)="login()" expand="block">Login</ion-button>
+  <ion-button expand="block" color="secondary" href="/register" routerDirection="forward">Register</ion-button>
+</ion-content> -->
