@@ -43,21 +43,45 @@ export class LoginPage implements OnInit {
   }
 
   login() {
-    this.authService.auth(this.registerCredentials.username, this.registerCredentials.password)
-      .then(data => {
-        this.authService.token = localStorage.getItem('token');
-        this.findUserByUsername();
-        console.log('localStorage auth()');
-        console.log(localStorage);
-        console.log('this.storage auth()');
-        // console.log(this.storage);
-      }, (error) => {
-        console.log(error);
-      }
-      ).catch((error => {
-        console.log(error);
-      }
-      ));
+    let run = true;
+
+    if (
+      this.registerCredentials.password === '' ||
+      this.registerCredentials.username === ''
+    ) {
+      run = false;
+    }
+    if (
+      this.registerCredentials.username === null ||
+      this.registerCredentials.password === null
+    ) {
+      run = false;
+    }
+    if (this.registerCredentials.username === undefined ||
+      this.registerCredentials.password === undefined
+    ) {
+      run = false;
+    }
+    if (run) {
+      this.authService.auth(this.registerCredentials.username, this.registerCredentials.password)
+        .then(data => {
+          this.authService.token = localStorage.getItem('token');
+          this.findUserByUsername();
+          console.log('localStorage auth()');
+          console.log(localStorage);
+          console.log('this.storage auth()');
+          // console.log(this.storage);
+        }, (error) => {
+          console.log(error);
+        }
+        ).catch((error => {
+          console.log(error);
+        }
+        ));
+    } else {
+      this.alertService.showError('Empty credentials');
+    }
+
   }
 
   findUserByUsername() {
