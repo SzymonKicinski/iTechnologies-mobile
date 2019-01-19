@@ -1,8 +1,10 @@
+import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
+import { CommonModule } from '@angular/common';
 import { LoginService } from './services/login.service';
 import { UserApiService } from './services/user-api.service';
 import { SessionService } from './services/session.service';
 import { AlertService } from './services/alert.service';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
 
@@ -21,7 +23,8 @@ import { IonicStorageModule } from '@ionic/storage';
     BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
-    IonicStorageModule.forRoot()
+    IonicStorageModule.forRoot(),
+    CommonModule
   ],
   providers: [
     StatusBar,
@@ -31,7 +34,12 @@ import { IonicStorageModule } from '@ionic/storage';
     SessionService,
     UserApiService,
     LoginService,
+    CommonModule,
+    BarcodeScanner
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA
+  ]
 })
 export class AppModule {}

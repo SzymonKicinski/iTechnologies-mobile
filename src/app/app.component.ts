@@ -11,6 +11,19 @@ import { AuthenticationService } from './services/authentication.service';
   templateUrl: 'app.component.html'
 })
 export class AppComponent {
+  public appPages = [
+    {
+      title: 'Home',
+      url: '/dashboard',
+      icon: 'home'
+    },
+    {
+      title: 'Barcode',
+      url: '/barcode',
+      icon: 'list'
+    }
+  ];
+
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,

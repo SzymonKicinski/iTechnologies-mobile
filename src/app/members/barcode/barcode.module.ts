@@ -1,3 +1,4 @@
+import { AuthGuardService } from './../../services/auth-guard.service';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -10,7 +11,8 @@ import { BarcodePage } from './barcode.page';
 const routes: Routes = [
   {
     path: '',
-    component: BarcodePage
+    component: BarcodePage,
+    canActivate: [AuthGuardService]
   }
 ];
 
