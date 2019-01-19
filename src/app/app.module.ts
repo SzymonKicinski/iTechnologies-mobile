@@ -1,3 +1,4 @@
+import { ItemsNewValueHandlerService } from './services/itemsNewValueHandler.service';
 import { BrandService } from './services/brand.service';
 import { StorehousesService } from './services/storehouses.service';
 import { BookstandService } from './services/bookstand.service';
@@ -44,6 +45,7 @@ import { IonicStorageModule } from '@ionic/storage';
     SessionService,
     UserApiService,
     LoginService,
+    ItemsNewValueHandlerService,
     CommonModule,
     BarcodeScanner
   ],

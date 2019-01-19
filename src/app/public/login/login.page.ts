@@ -67,9 +67,9 @@ export class LoginPage implements OnInit {
         .then(data => {
           this.authService.token = localStorage.getItem('token');
           this.findUserByUsername();
-          console.log('localStorage auth()');
-          console.log(localStorage);
-          console.log('this.storage auth()');
+          // console.log('localStorage auth()');
+          // console.log(localStorage);
+          // console.log('this.storage auth()');
           // console.log(this.storage);
         }, (error) => {
           console.log(error);
@@ -88,7 +88,7 @@ export class LoginPage implements OnInit {
     this.userApiService.findUserByUsername(this.registerCredentials.username)
       .then((response: any) => {
         this.sessionService.currentUser = response.data;
-        console.log(this.sessionService.currentUser);
+        // console.log(this.sessionService.currentUser);
         const isAdmin = this.sessionService.currentUser.roleAdmin;
         this.setAuthorities(isAdmin);
         if (this.sessionService.currentUser.active === false) {

@@ -1,12 +1,18 @@
+import { ItemsNewValueHandlerService } from './itemsNewValueHandler.service';
+import { BarcodePage } from './../members/barcode/barcode.page';
 import { AlertController } from '@ionic/angular';
 import { Injectable } from '@angular/core';
+import { ItemsService } from './items.service';
 
 declare var alert: any;
 
 @Injectable()
 export class AlertService {
 
-    constructor(private alertCtrl: AlertController) {
+    constructor(
+        private alertCtrl: AlertController,
+        private itemsService: ItemsService
+    ) {
     }
 
     showNotification(from, align, type, message) {
@@ -44,6 +50,16 @@ export class AlertService {
         });
         return await alertct.present();
     }
+    async showSuccess(text) {
+
+        const alertct = await this.alertCtrl.create({
+            // message: text,
+            header: 'Success',
+            subHeader: text,
+            buttons: ['OK']
+        });
+        return await alertct.present();
+    }
 
     async showItem(item: Items) {
         const alertct = await this.alertCtrl.create({
@@ -51,60 +67,68 @@ export class AlertService {
             inputs: [
                 {
                     name: 'Serial number',
-                    type: 'number',
-                    placeholder: 'Barcode',
-                    value: item.serialNumberItem,
-                    disabled: true
+                    type: 'text',
+                    value: `Serial number: ${item.serialNumberItem}`,
+                    placeholder: `Serial number: ${item.serialNumberItem}`,
+                    disabled: true,
+                    label: 'Serial number'
                 },
                 {
                     name: 'Item name',
                     type: 'text',
                     id: 'item-name',
-                    value: item.itemName,
-                    placeholder: 'Item name',
-                    disabled: true
+                    value: `Item name: ${item.itemName}`,
+                    placeholder: `Item name: ${item.itemName}`,
+                    disabled: true,
+                    label: 'Item name'
                 },
                 {
                     name: 'Totality of item',
                     type: 'number',
-                    value: item.numberItem,
-                    placeholder: 'Totality of item',
-                    disabled: true
+                    value: `Totality of item ${item.numberItem}`,
+                    placeholder: `Totality of item: ${item.numberItem}`,
+                    disabled: true,
+                    label: 'Totality of item'
                 },
                 // input date with min & max
                 {
-                    name: 'New totality of item',
+                    name: 'newTotalityOfItem',
                     type: 'number',
                     value: item.newNumberItem,
-                    placeholder: 'New totality of item'
+                    placeholder: 'New totality of item',
+                    label: 'New totality of item'
                 },
                 {
                     name: 'Status item',
-                    type: 'number',
-                    value: 1,
-                    placeholder: 'Status item',
-                    disabled: true
+                    type: 'text',
+                    value: `Status item: 1`,
+                    placeholder: 'Status item: 1',
+                    disabled: true,
+                    label: 'Status item'
                 },
                 {
                     name: 'Category',
                     type: 'text',
-                    value: item.category.id,
-                    placeholder: `${item.category.id} : ${item.category.namecategory}`,
-                    disabled: true
+                    value: `Category ${item.category.id} : ${item.category.namecategory}`,
+                    placeholder: `Category ${item.category.id} : ${item.category.namecategory}`,
+                    disabled: true,
+                    label: 'id : Category'
                 },
                 {
                     name: 'Bookstands',
                     type: 'text',
-                    value: item.bookstands.id,
-                    placeholder: `${ item.bookstands.numberBookstand } : ${ item.bookstands.storehouses.location }`,
-                    disabled: true
+                    value: `Bookstands ${item.bookstands.numberBookstand} : ${item.bookstands.storehouses.location}`,
+                    placeholder: `Bookstands ${item.bookstands.numberBookstand} : ${item.bookstands.storehouses.location}`,
+                    disabled: true,
+                    label: 'Number of bookstand : Location'
                 },
                 {
                     name: 'Brands',
                     type: 'text',
-                    value: item.brands.id,
-                    placeholder: `${ item.brands.name }`,
-                    disabled: true
+                    value: `Brand: ${item.brands.name}`,
+                    placeholder: `${item.brands.name}`,
+                    disabled: true,
+                    label: 'Brands'
                 },
             ],
             buttons: [
@@ -113,12 +137,36 @@ export class AlertService {
                     role: 'cancel',
                     cssClass: 'secondary',
                     handler: () => {
-                        console.log('Confirm Cancel');
+                        // console.log('Confirm Cancel');
                     }
                 }, {
                     text: 'Ok',
-                    handler: () => {
-                        console.log('Confirm Ok');
+                    handler: data => {
+                        if (
+                            item.category === null ||
+                            item.serialNumberItem === null ||
+                            item.numberItem === null ||
+                            item.id === null ||
+                            item.brands === null ||
+                            item.itemName === null ||
+                            item.newNumberItem === null ||
+                            item.statusItem === null ||
+                            item.bookstands == null
+                        ) {
+                            this.showError('Error empty value of new totality of item');
+                        } else {
+                            if (Number(item.newNumberItem)) {
+                                this.itemsService.updateItemAlert(item, data.newTotalityOfItem)
+                                    .then((response => {
+                                        if (response !== null ) {
+                                            this.showSuccess('Item updated');
+                                        }
+                                    }))
+                                    .catch((error => {
+                                        this.showError('Server error');
+                                    }));
+                            }
+                        }
                     }
                 }
             ]

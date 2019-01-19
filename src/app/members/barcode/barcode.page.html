@@ -22,7 +22,7 @@
             <ion-button click="scanCodeHome()" size="large" full type="submit" expand="block" [disabled]="!registerForm.form.valid">Scan</ion-button>
           </div>
         </form>
-        <form (ngSubmit)="login()" #registerForm="ngForm">
+        <form (ngSubmit)="searchItemByCode()" #registerForm="ngForm">
           <div padding>
             <ion-item>
               <ion-input type="text" placeholder="Barcode" [(ngModel)]="scannedData.text" [ngModelOptions]="{standalone: true}"
@@ -32,7 +32,7 @@
               <ion-button size="large" full type="submit" expand="block" [disabled]="!registerForm.form.valid">Find
                 item</ion-button>
             </div>
-            
+
           </div>
         </form>
       </ion-col>

@@ -1,7 +1,6 @@
 import { API_URL } from './api-connect';
 import { SessionService } from './session.service';
 import { Injectable } from '@angular/core';
-import { AlertService } from './alert.service';
 import { HttpHeaders } from '@angular/common/http';
 import * as CryptoJS from 'crypto-js';
 import axios, { AxiosPromise } from 'axios';
@@ -12,7 +11,6 @@ export class ItemsService {
 
 
     constructor(
-        private alertService: AlertService,
         private sessionService: SessionService) {
     }
 
@@ -70,6 +68,23 @@ export class ItemsService {
             numberItem: item.numberItem,
             statusItem: 0,
             newNumberItem: item.newNumberItem
+        };
+        return axios.put(path, body, {
+            headers: {
+                'Authorization': localStorage.getItem('token'),
+                'Content-Type': 'application/json'
+            }
+        });
+    }
+
+    updateItemAlert(item, data) {
+        const path = API_URL + `/items/update`;
+        const body = {
+            serialNumberItem: item.serialNumberItem,
+            itemName: item.itemName,
+            numberItem: item.numberItem,
+            statusItem: 1,
+            newNumberItem: data
         };
         return axios.put(path, body, {
             headers: {

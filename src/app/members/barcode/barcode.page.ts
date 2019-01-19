@@ -74,8 +74,8 @@ export class BarcodePage implements OnInit {
             }
           );
         }
-        console.log('dropDownInterfaceBookstand');
-        console.log(this.dropDownInterfaceBookstand);
+        // console.log('dropDownInterfaceBookstand');
+        // console.log(this.dropDownInterfaceBookstand);
       });
   }
   getCategiresLis() {
@@ -92,8 +92,8 @@ export class BarcodePage implements OnInit {
             }
           );
         }
-        console.log('dropDownInterfaceCategories');
-        console.log(this.dropDownInterfaceCategories);
+        // console.log('dropDownInterfaceCategories');
+        // console.log(this.dropDownInterfaceCategories);
       });
 
   }
@@ -111,8 +111,8 @@ export class BarcodePage implements OnInit {
             }
           );
         }
-        console.log('dropDownInterfaceBrand');
-        console.log(this.dropDownInterfaceBrand);
+        // console.log('dropDownInterfaceBrand');
+        // console.log(this.dropDownInterfaceBrand);
       });
   }
 
@@ -120,11 +120,11 @@ export class BarcodePage implements OnInit {
     this.itemsService.getItems()
       .then((response: any) => {
         this.itemsList = <Items[]>response.data.content;
-        console.log('this.itemsList');
-        console.log(this.itemsList);
+        // console.log('this.itemsList');
+        // console.log(this.itemsList);
       })
       .catch((error) => {
-        console.log(error);
+        // console.log(error);
       });
   }
 
@@ -145,14 +145,13 @@ export class BarcodePage implements OnInit {
   }
 
   scanCode() {
-    debugger;
     this.barcodeScanner.scan().then(barcodeData => {
       alert('Barcode data ' + JSON.stringify(barcodeData));
       this.scannedData = barcodeData;
-      console.log('this.scanCode');
-      console.log(this.scanCode);
+      // console.log('this.scanCode');
+      // console.log(this.scanCode);
     }).catch(err => {
-      console.log('Error', err);
+      // console.log('Error', err);
     });
   }
 
@@ -165,8 +164,8 @@ export class BarcodePage implements OnInit {
           if (response === undefined) {
             this.alertService.showError('Incorrect barcode!');
           } else {
-            console.log(response);
-            debugger;
+            // console.log(response);
+            // this.item = response.data;
             this.alertService.showItem(response.data);
             // this.cloneItemToEdit.id = response.data.id;
             // this.cloneItemToEdit.serialNumberItem = response.data.serialNumberItem;
@@ -188,7 +187,7 @@ export class BarcodePage implements OnInit {
           }
         }, (error) => {
           this.alertService.showError('Incorrect barcode!');
-          console.log(error);
+          // console.log(error);
         });
     }
   }
@@ -197,18 +196,22 @@ export class BarcodePage implements OnInit {
     item.category = this.findCategory(item.category.id);
     item.bookstand = this.findBookstand(item.bookstands.id);
     item.brands = this.findBrand(item.brands.id);
-    console.log(item);
+    // console.log(item);
     this.itemsService.updateItem(item)
       .then((response) => {
+        this.alertService.showSuccess('Updated item');
         // this.displayDialog = false;
         this.ngOnInit();
       })
       .catch((error) => {
-        console.log(error);
+        // console.log(error);
+        this.alertService.showError('Error during upgrade');
         this.ngOnInit();
       });
 
   }
+
+
 
 }
 

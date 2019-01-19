@@ -1,6 +1,5 @@
 import { API_URL } from './api-connect';
 import { Injectable } from '@angular/core';
-import { AlertService } from './alert.service';
 import { HttpHeaders } from '@angular/common/http';
 import * as CryptoJS from 'crypto-js';
 import axios, { AxiosPromise } from 'axios';
@@ -10,8 +9,7 @@ import axios, { AxiosPromise } from 'axios';
 export class BrandService {
 
 
-    constructor(
-        private alertService: AlertService) {
+    constructor() {
     }
 
     getBrands(): any {

@@ -10,8 +10,7 @@ import axios, { AxiosPromise } from 'axios';
 export class StorehousesService {
 
 
-    constructor(
-        private alertService: AlertService) {
+    constructor() {
     }
 
     getStorehouses() {

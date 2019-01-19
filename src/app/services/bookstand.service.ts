@@ -3,7 +3,6 @@ import { StorehousesService } from './storehouses.service';
 import { Injectable } from '@angular/core';
 import axios from 'axios';
 
-import { AlertService } from './alert.service';
 
 
 @Injectable()
@@ -11,7 +10,6 @@ export class BookstandService {
 
 
     constructor(
-        private alertService: AlertService,
         private storehousesService: StorehousesService) {
     }
 
