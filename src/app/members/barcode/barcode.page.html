@@ -25,18 +25,14 @@
         <form (ngSubmit)="login()" #registerForm="ngForm">
           <div padding>
             <ion-item>
-              <ion-input type="text" placeholder="Barcode" [(ngModel)]="scannedData" [ngModelOptions]="{standalone: true}"
+              <ion-input type="text" placeholder="Barcode" [(ngModel)]="scannedData.text" [ngModelOptions]="{standalone: true}"
                 required></ion-input>
             </ion-item>
             <div padding>
               <ion-button size="large" full type="submit" expand="block" [disabled]="!registerForm.form.valid">Find
                 item</ion-button>
             </div>
-
-            <!-- <ion-item>
-              <ion-input type="password" placeholder="Password" [(ngModel)]="registerCredentials.password"
-                [ngModelOptions]="{standalone: true}" required></ion-input>
-            </ion-item> -->
+            
           </div>
         </form>
       </ion-col>

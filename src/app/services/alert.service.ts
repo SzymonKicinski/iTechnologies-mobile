@@ -44,4 +44,85 @@ export class AlertService {
         });
         return await alertct.present();
     }
+
+    async showItem(item: Items) {
+        const alertct = await this.alertCtrl.create({
+            header: 'Item',
+            inputs: [
+                {
+                    name: 'Serial number',
+                    type: 'number',
+                    placeholder: 'Barcode',
+                    value: item.serialNumberItem,
+                    disabled: true
+                },
+                {
+                    name: 'Item name',
+                    type: 'text',
+                    id: 'item-name',
+                    value: item.itemName,
+                    placeholder: 'Item name',
+                    disabled: true
+                },
+                {
+                    name: 'Totality of item',
+                    type: 'number',
+                    value: item.numberItem,
+                    placeholder: 'Totality of item',
+                    disabled: true
+                },
+                // input date with min & max
+                {
+                    name: 'New totality of item',
+                    type: 'number',
+                    value: item.newNumberItem,
+                    placeholder: 'New totality of item'
+                },
+                {
+                    name: 'Status item',
+                    type: 'number',
+                    value: 1,
+                    placeholder: 'Status item',
+                    disabled: true
+                },
+                {
+                    name: 'Category',
+                    type: 'text',
+                    value: item.category.id,
+                    placeholder: `${item.category.id} : ${item.category.namecategory}`,
+                    disabled: true
+                },
+                {
+                    name: 'Bookstands',
+                    type: 'text',
+                    value: item.bookstands.id,
+                    placeholder: `${ item.bookstands.numberBookstand } : ${ item.bookstands.storehouses.location }`,
+                    disabled: true
+                },
+                {
+                    name: 'Brands',
+                    type: 'text',
+                    value: item.brands.id,
+                    placeholder: `${ item.brands.name }`,
+                    disabled: true
+                },
+            ],
+            buttons: [
+                {
+                    text: 'Cancel',
+                    role: 'cancel',
+                    cssClass: 'secondary',
+                    handler: () => {
+                        console.log('Confirm Cancel');
+                    }
+                }, {
+                    text: 'Ok',
+                    handler: () => {
+                        console.log('Confirm Ok');
+                    }
+                }
+            ]
+        });
+        return await alertct.present();
+    }
 }

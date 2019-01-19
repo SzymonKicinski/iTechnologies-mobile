@@ -1,3 +1,8 @@
+import { BrandService } from './services/brand.service';
+import { StorehousesService } from './services/storehouses.service';
+import { BookstandService } from './services/bookstand.service';
+import { CategoryService } from './services/category.service';
+import { ItemsService } from './services/items.service';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
 import { CommonModule } from '@angular/common';
 import { LoginService } from './services/login.service';
@@ -28,6 +33,11 @@ import { IonicStorageModule } from '@ionic/storage';
   ],
   providers: [
     StatusBar,
+    ItemsService,
+    CategoryService,
+    BookstandService,
+    StorehousesService,
+    BrandService,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     AlertService,
