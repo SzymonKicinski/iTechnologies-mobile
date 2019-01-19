@@ -21,6 +21,11 @@ export class AppComponent {
       title: 'Barcode',
       url: '/barcode',
       icon: 'list'
+    },
+    {
+      title: 'Logout',
+      url: '',
+      icon: 'list'
     }
   ];
 
@@ -29,7 +34,7 @@ export class AppComponent {
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
     private authenticationService: AuthenticationService,
-    private router: Router
+    private router: Router,
   ) {
     this.initializeApp();
   }
@@ -47,5 +52,9 @@ export class AppComponent {
         }
       });
     });
+  }
+
+  logout() {
+    this.authenticationService.logout();
   }
 }

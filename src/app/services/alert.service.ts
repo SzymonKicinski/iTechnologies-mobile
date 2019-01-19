@@ -62,6 +62,7 @@ export class AlertService {
     }
 
     async showItem(item: Items) {
+        debugger;
         const alertct = await this.alertCtrl.create({
             header: 'Item',
             inputs: [

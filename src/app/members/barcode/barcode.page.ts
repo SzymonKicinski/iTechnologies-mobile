@@ -146,24 +146,32 @@ export class BarcodePage implements OnInit {
 
   scanCode() {
     this.barcodeScanner.scan().then(barcodeData => {
+      debugger;
+      this.searchItemByCode();
       alert('Barcode data ' + JSON.stringify(barcodeData));
       this.scannedData = barcodeData;
       // console.log('this.scanCode');
       // console.log(this.scanCode);
+
     }).catch(err => {
       // console.log('Error', err);
     });
   }
 
   searchItemByCode() {
+    debugger;
     if (this.scannedData === null || this.scannedData === undefined) {
       this.alertService.showError('Empty serial number!');
     } else {
+      debugger;
       this.itemsService.getItem(this.scannedData.text)
         .then((response: any) => {
+          debugger;
           if (response === undefined) {
+            debugger;
             this.alertService.showError('Incorrect barcode!');
           } else {
+            debugger;
             // console.log(response);
             // this.item = response.data;
             this.alertService.showItem(response.data);

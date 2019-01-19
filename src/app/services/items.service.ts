@@ -95,14 +95,23 @@ export class ItemsService {
     }
 
     getItem(serialNumberItem) {
+        debugger;
+        console.log(localStorage.getItem('token'));
+        console.log(localStorage);
         const path = API_URL + `/item/${serialNumberItem}`;
         return axios.get(path, {
             headers: {
-                'Authorization': localStorage.getItem('token'),
+                'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsiYXV0b2NlbnRlcmp3dHJlc291cmNlaWQiXSwidXNlcl9uYW1lIjoiYWRtaW4iLCJzY29wZSI6WyJyZWFkIiwid3JpdGUiXSwiZXhwIjoxNTQ4MDE1MjExLCJhdXRob3JpdGllcyI6WyJhZG1pbiJdLCJqdGkiOiIwMTU3YzBiNi1jY2RlLTRmYzItODI3Ni1mNDJjNDNlNTliZWIiLCJjbGllbnRfaWQiOiJhdXRvY2VudGVyand0Y2xpZW50aWQifQ.wHcU-cCoH9NEFJJJZCJ_i5CjrAjscVwM319TiFZLN3w',
+                // 'Authorization': localStorage.getItem('token'),
                 'Content-Type': 'application/x-www-form-urlencoded'
             }
         })
+            .then((response => {
+                debugger;
+                console.log(response);
+            }))
             .catch((error) => {
+                debugger;
                 console.log('Item service getItem');
                 console.log(error);
             });

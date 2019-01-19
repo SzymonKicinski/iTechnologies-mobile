@@ -6,6 +6,11 @@
     <ion-menu>
       <ion-header>
         <ion-toolbar>
+          <ion-buttons slot="start">
+            <ion-button (click)="logout()">
+              <ion-icon slot="icon-only" name="log-out"></ion-icon>
+            </ion-button>
+          </ion-buttons>
           <ion-title>Menu</ion-title>
         </ion-toolbar>
       </ion-header>
@@ -18,6 +23,12 @@
                 {{p.title}}
               </ion-label>
             </ion-item>
+            <!-- <ion-item [routerDirection]="'root'" [routerLink]="[p.login]" ng-click="">
+              <ion-icon slot="" [name]="p.list"></ion-icon>
+              <ion-label>
+                Logout
+              </ion-label>
+            </ion-item> -->
           </ion-menu-toggle>
         </ion-list>
       </ion-content>
