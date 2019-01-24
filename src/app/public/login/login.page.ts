@@ -1,3 +1,4 @@
+import { ItemsService } from './../../services/items.service';
 import { BehaviorSubject } from 'rxjs';
 import { SessionService } from './../../services/session.service';
 import { async } from '@angular/core/testing';
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from './../../services/authentication.service';
 import { LoadingController, NavController, AlertController } from '@ionic/angular';
 import { UserApiService } from '../../services/user-api.service';
+import { Storage } from '@ionic/storage';
 
 
 @Component({
@@ -32,7 +34,9 @@ export class LoginPage implements OnInit {
     private alertCtrl: AlertController,
     private alertService: AlertService,
     private userApiService: UserApiService,
-    private sessionService: SessionService
+    private sessionService: SessionService,
+    private storage: Storage,
+    private itemsService: ItemsService
   ) { }
 
   ngOnInit() {
@@ -66,11 +70,13 @@ export class LoginPage implements OnInit {
       this.authService.auth(this.registerCredentials.username, this.registerCredentials.password)
         .then(data => {
           this.authService.token = localStorage.getItem('token');
+          console.log('TOKEN!!!!!!!!!!!!!!!');
+          console.log(localStorage.getItem('token'));
           this.findUserByUsername();
-          // console.log('localStorage auth()');
-          // console.log(localStorage);
-          // console.log('this.storage auth()');
-          // console.log(this.storage);
+          console.log('localStorage auth()');
+          console.log(localStorage);
+          console.log('this.storage auth()');
+          console.log(this.storage);
         }, (error) => {
           console.log(error);
         }

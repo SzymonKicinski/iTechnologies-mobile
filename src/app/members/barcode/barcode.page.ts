@@ -147,14 +147,11 @@ export class BarcodePage implements OnInit {
   scanCode() {
     this.barcodeScanner.scan().then(barcodeData => {
       debugger;
-      this.searchItemByCode();
-      alert('Barcode data ' + JSON.stringify(barcodeData));
       this.scannedData = barcodeData;
-      // console.log('this.scanCode');
-      // console.log(this.scanCode);
-
-    }).catch(err => {
-      // console.log('Error', err);
+      this.searchItemByCode();
+      
+  }).catch(err => {
+    this.alertService.showError('Inncorrect barcode!');
     });
   }
 

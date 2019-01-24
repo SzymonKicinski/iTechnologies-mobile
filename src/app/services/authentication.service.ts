@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { AlertService } from './alert.service';
 import { TOKEN_AUTH_USERNAME, TOKEN_AUTH_PASSWORD, API_URL } from './api-connect';
 import { Platform, LoadingController, AlertController } from '@ionic/angular';
@@ -6,6 +7,7 @@ import { Storage } from '@ionic/storage';
 import { BehaviorSubject } from 'rxjs';
 import { Observable } from 'rxjs/Observable';
 import axios from 'axios';
+// import { HTTP } from '@ionic-native/http/ngx';
 
 const TOKEN_KEY = 'auth-token';
 
@@ -19,11 +21,19 @@ export class User {
   }
 }
 
+export class Response {
+  access_token: string;
+  expires_in: number;
+  jti: string;
+  refresh_token: string;
+  scope: string;
+  token_type: string;
+}
+
 @Injectable({
   providedIn: 'root'
 })
 export class AuthenticationService {
-  path = 'http://localhost:8080/api/it/login';
   token = '';
 
   loading: LoadingController;
@@ -36,7 +46,10 @@ export class AuthenticationService {
     private storage: Storage,
     private plt: Platform,
     private alertService: AlertService,
-    private alertCtrl: AlertController) {
+    private alertCtrl: AlertController,
+    private httpClient: HttpClient
+    // private httpNative: HTTP
+  ) {
     this.plt.ready().then(() => {
       console.log('this.storage constructor AuthService CheckToken');
       console.log(this.storage);
@@ -50,25 +63,41 @@ export class AuthenticationService {
     } else {
       return new Promise((resolve, reject) => {
         const body = `username=${encodeURIComponent(username)}&password=${encodeURIComponent(password)}&grant_type=password`;
-        axios.post(`${API_URL}/login`, body, {
+        this.httpClient.post(`${API_URL}/login`, body, {
+          // this.httpNative.post(`${API_URL}/login`, body, {
           headers: {
             'Content-Type': 'application/x-www-form-urlencoded',
             'Authorization': 'Basic ' + btoa(TOKEN_AUTH_USERNAME + ':' + TOKEN_AUTH_PASSWORD)
           }
-        }).then(response => {
-          // this.authenticationState.next(true); #TODO Trash
-          localStorage.setItem('token', `Bearer ${response.data.access_token}`);
-          this.storage.set('token', `Bearer ${response.data.access_token}`);
-          console.log('localStorage auth()');
-          console.log(localStorage);
-          console.log('this.storage auth()');
-          console.log(this.storage);
-          resolve(response.data.access_token);
-        }).catch(error => {
-          console.log(error);
-          this.alertService.showError('Bad credentials');
-          reject(error.response.data);
-        });
+        })
+          .subscribe((response: Response) => {
+              // this.authenticationState.next(true); #TODO Trash
+              localStorage.setItem('token', `Bearer ${response.access_token}`);
+              this.storage.set('token', `Bearer ${response.access_token}`);
+              console.log('localStorage auth()');
+              console.log(localStorage);
+              console.log('this.storage auth()');
+              console.log(this.storage);
+              resolve(response.access_token);
+              return response;
+          }, error => {
+            console.log(error);
+            this.alertService.showError('Bad credentials');
+          });
+        // .then(response => {
+        //   // this.authenticationState.next(true); #TODO Trash
+        //   localStorage.setItem('token', `Bearer ${response.data.access_token}`);
+        //   this.storage.set('token', `Bearer ${response.data.access_token}`);
+        //   console.log('localStorage auth()');
+        //   console.log(localStorage);
+        //   console.log('this.storage auth()');
+        //   console.log(this.storage);
+        //   resolve(response.data.access_token);
+        // }).catch(error => {
+        //   console.log(error);
+        //   this.alertService.showError('Bad credentials');
+        //   // reject(error.response.data);
+        // });
       });
     }
 
@@ -76,7 +105,7 @@ export class AuthenticationService {
 
   setAuthenticationState(value: boolean) {
     return this.authenticationState.next(value);
-    // this.authenticationState.next(true); #TODO Trash
+    // this.authenticationState.next(true); #TODO Trashc
   }
 
   checkToken() {

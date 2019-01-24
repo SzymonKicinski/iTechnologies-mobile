@@ -3,5 +3,11 @@
   "integrations": {
     "cordova": {}
   },
-  "type": "angular"
+  "type": "angular",
+  "proxies": [
+    {
+      "path" : "/api",
+      "proxyUrl": "http://10.111.48.147:8080/api/it"
+    }
+  ]
 }
