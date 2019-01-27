@@ -62,7 +62,6 @@ export class AlertService {
     }
 
     async showItem(item: Items) {
-        debugger;
         const alertct = await this.alertCtrl.create({
             header: 'Item',
             inputs: [
@@ -91,7 +90,6 @@ export class AlertService {
                     disabled: true,
                     label: 'Totality of item'
                 },
-                // input date with min & max
                 {
                     name: 'newTotalityOfItem',
                     type: 'number',
@@ -138,7 +136,7 @@ export class AlertService {
                     role: 'cancel',
                     cssClass: 'secondary',
                     handler: () => {
-                        // console.log('Confirm Cancel');
+                        console.log('Confirm Cancel');
                     }
                 }, {
                     text: 'Ok',

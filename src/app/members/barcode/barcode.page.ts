@@ -146,53 +146,27 @@ export class BarcodePage implements OnInit {
 
   scanCode() {
     this.barcodeScanner.scan().then(barcodeData => {
-      debugger;
       this.scannedData = barcodeData;
       this.searchItemByCode();
-      
   }).catch(err => {
     this.alertService.showError('Inncorrect barcode!');
     });
   }
 
   searchItemByCode() {
-    debugger;
     if (this.scannedData === null || this.scannedData === undefined) {
       this.alertService.showError('Empty serial number!');
     } else {
-      debugger;
       this.itemsService.getItem(this.scannedData.text)
         .then((response: any) => {
-          debugger;
           if (response === undefined) {
-            debugger;
             this.alertService.showError('Incorrect barcode!');
           } else {
-            debugger;
-            // console.log(response);
-            // this.item = response.data;
             this.alertService.showItem(response.data);
-            // this.cloneItemToEdit.id = response.data.id;
-            // this.cloneItemToEdit.serialNumberItem = response.data.serialNumberItem;
-            // this.cloneItemToEdit.itemName = response.data.itemName;
-            // this.cloneItemToEdit.numberItem = response.data.numberItem;
-            // this.cloneItemToEdit.statusItem = response.data.statusItem;
-            // this.cloneItemToEdit.newNumberItem = response.data.newNumberItem;
-            // this.cloneItemToEdit.brands.id = response.data.brands.id
-            // this.cloneItemToEdit.brands.name = response.data.brands.name;
-            // this.cloneItemToEdit.bookstands.id = response.data.bookstands.id;
-            // this.cloneItemToEdit.bookstands.numberBookstand = response.data.bookstands.numberBookstand;
-            // this.cloneItemToEdit.bookstands.storehouses.id = response.data.bookstands.storehouses.id;
-            // this.cloneItemToEdit.bookstands.storehouses.location = response.data.bookstands.storehouses.location;
-            // this.cloneItemToEdit.category.id = response.data.category.id;
-            // this.cloneItemToEdit.category.namecategory = response.data.category.namecategory;
-            // console.log(this.cloneItemToEdit);
-            // this.displayDialog = true;
-            // this.newItems = false;
           }
         }, (error) => {
           this.alertService.showError('Incorrect barcode!');
-          // console.log(error);
+          console.log(error);
         });
     }
   }
@@ -201,15 +175,13 @@ export class BarcodePage implements OnInit {
     item.category = this.findCategory(item.category.id);
     item.bookstand = this.findBookstand(item.bookstands.id);
     item.brands = this.findBrand(item.brands.id);
-    // console.log(item);
     this.itemsService.updateItem(item)
       .then((response) => {
         this.alertService.showSuccess('Updated item');
-        // this.displayDialog = false;
         this.ngOnInit();
       })
       .catch((error) => {
-        // console.log(error);
+        console.log(error);
         this.alertService.showError('Error during upgrade');
         this.ngOnInit();
       });
