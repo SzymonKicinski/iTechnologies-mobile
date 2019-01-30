@@ -20,12 +20,12 @@ export class AppComponent {
     {
       title: 'Barcode',
       url: '/barcode',
-      icon: 'list'
+      icon: 'barcode'
     },
     {
       title: 'Logout',
       url: '',
-      icon: 'list'
+      icon: 'log-out'
     }
   ];
 

@@ -70,13 +70,7 @@ export class LoginPage implements OnInit {
       this.authService.auth(this.registerCredentials.username, this.registerCredentials.password)
         .then(data => {
           this.authService.token = localStorage.getItem('token');
-          console.log('TOKEN!!!!!!!!!!!!!!!');
-          console.log(localStorage.getItem('token'));
           this.findUserByUsername();
-          console.log('localStorage auth()');
-          console.log(localStorage);
-          console.log('this.storage auth()');
-          console.log(this.storage);
         }, (error) => {
           console.log(error);
         }

@@ -46,7 +46,7 @@ export class BarcodePage implements OnInit {
     private bookstandService: BookstandService,
     private categoryService: CategoryService,
     private brandService: BrandService) {
-    // Options
+    
     this.barcodeScannerOptions = {
       showTorchButton: true,
       showFlipCameraButton: true
@@ -64,7 +64,6 @@ export class BarcodePage implements OnInit {
     this.bookstandService.getBookstands()
       .then((response) => {
         this.bookstandsList = response.data;
-        // console.log(this.bookstandsList);
         for (const bookstand of this.bookstandsList) {
           this.dropDownInterfaceBookstand.push(
             {
@@ -74,15 +73,12 @@ export class BarcodePage implements OnInit {
             }
           );
         }
-        // console.log('dropDownInterfaceBookstand');
-        // console.log(this.dropDownInterfaceBookstand);
       });
   }
   getCategiresLis() {
     this.categoryService.getCategories()
       .then((response) => {
         this.categoriesList = response.data;
-        // console.log(this.categoriesList);
         for (const category of this.categoriesList) {
           this.dropDownInterfaceCategories.push(
             {
@@ -92,8 +88,6 @@ export class BarcodePage implements OnInit {
             }
           );
         }
-        // console.log('dropDownInterfaceCategories');
-        // console.log(this.dropDownInterfaceCategories);
       });
 
   }
@@ -101,7 +95,6 @@ export class BarcodePage implements OnInit {
     this.brandService.getBrands()
       .then((response) => {
         this.brandsList = response.data;
-        // console.log(this.brandsList);
         for (const brand of this.brandsList) {
           this.dropDownInterfaceBrand.push(
             {
@@ -111,8 +104,6 @@ export class BarcodePage implements OnInit {
             }
           );
         }
-        // console.log('dropDownInterfaceBrand');
-        // console.log(this.dropDownInterfaceBrand);
       });
   }
 
@@ -120,11 +111,9 @@ export class BarcodePage implements OnInit {
     this.itemsService.getItems()
       .then((response: any) => {
         this.itemsList = <Items[]>response.data.content;
-        // console.log('this.itemsList');
-        // console.log(this.itemsList);
       })
       .catch((error) => {
-        // console.log(error);
+        console.log(error);
       });
   }
 
@@ -187,8 +176,6 @@ export class BarcodePage implements OnInit {
       });
 
   }
-
-
 
 }
 
