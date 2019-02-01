@@ -84,7 +84,8 @@ export class AlertService {
                 },
                 {
                     name: 'Totality of item',
-                    type: 'number',
+                    type: 'text',
+                    id: 'Totality-of-item',
                     value: `Totality of item ${item.numberItem}`,
                     placeholder: `Totality of item: ${item.numberItem}`,
                     disabled: true,
@@ -95,7 +96,8 @@ export class AlertService {
                     type: 'number',
                     value: item.newNumberItem,
                     placeholder: 'New totality of item',
-                    label: 'New totality of item'
+                    label: 'New totality of item',
+                    checked: false
                 },
                 {
                     name: 'Status item',

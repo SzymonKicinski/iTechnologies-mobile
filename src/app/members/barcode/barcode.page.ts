@@ -46,7 +46,7 @@ export class BarcodePage implements OnInit {
     private bookstandService: BookstandService,
     private categoryService: CategoryService,
     private brandService: BrandService) {
-    
+
     this.barcodeScannerOptions = {
       showTorchButton: true,
       showFlipCameraButton: true

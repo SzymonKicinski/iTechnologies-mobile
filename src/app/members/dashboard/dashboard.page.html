@@ -8,72 +8,35 @@
     </ion-title>
   </ion-toolbar>
 </ion-header>
-<!--  -->
-<!--  -->
-<!--  -->
-<!--  -->
-<!--  -->
-<!-- <ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-button (click)="logout()">
-        <ion-icon slot="icon-only" name="log-out"></ion-icon>
-      </ion-button>
-    </ion-buttons>
-    <ion-title>Dashboard</ion-title>
-  </ion-toolbar>
-</ion-header> -->
-<!--  -->
-<!--  -->
-<!--  -->
-<!--  -->
-<!-- <ion-split-pane>
-  <ion-menu>
-    <ion-header>
-      <ion-toolbar>
-        <ion-buttons slot="start">
-          <ion-button (click)="logout()">
-            <ion-icon slot="icon-only" name="log-out"></ion-icon>
-          </ion-button>
-        </ion-buttons>
-        <ion-title>Dashboard</ion-title>
-      </ion-toolbar>
-    </ion-header>
-  </ion-menu>
-  <ion-router-outlet main></ion-router-outlet>
-</ion-split-pane> -->
 
 <ion-content padding>
   <ion-card class="welcome-card">
     <ion-img src="/assets/shapes.svg"></ion-img>
     <ion-card-header>
       <ion-card-subtitle>Get Started</ion-card-subtitle>
-      <ion-card-title>Welcome to iTechnologies</ion-card-title>
+      <ion-card-title>Welcome to iTechnologies App</ion-card-title>
     </ion-card-header>
     <ion-card-content>
       <h4>Quick Guide</h4>
-      <p>Scan your barcode or manually enter barcode and after that add the new number of items. And Done!</p>
+      <p>Click on the menu on the upper left corner of the screen next switch to the barcode tab. Scan your barcode or manually
+      enter the barcode and after that add the new number of items. And Done!</p>
     </ion-card-content>
   </ion-card>
   <ion-list lines="none">
     <ion-list-header>
       <ion-label>Resources</ion-label>
     </ion-list-header>
-    <ion-item href="https://beta.ionicframework.com/docs/">
-      <ion-icon slot="start" color="medium" name="book"></ion-icon>
-      <ion-label>Ionic Documentation</ion-label>
+    <ion-item href="https://github.com/SzymonKicinski/iTechnologies-mobile">
+      <ion-icon slot="start" color="medium" name="logo-github"></ion-icon>
+      <ion-label>Open source licence</ion-label>
     </ion-item>
-    <ion-item href="https://beta.ionicframework.com/docs/building/scaffolding">
-      <ion-icon slot="start" color="medium" name="build"></ion-icon>
-      <ion-label>Scaffold Out Your App</ion-label>
+    <ion-item href="https://github.com/SzymonKicinski/iTechnologies-mobile/issues/new">
+      <ion-icon slot="start" color="medium" name="bug"></ion-icon>
+      <ion-label>Any bugs? Create an issue here.</ion-label>
     </ion-item>
-    <ion-item href="https://beta.ionicframework.com/docs/layout/structure">
-      <ion-icon slot="start" color="medium" name="grid"></ion-icon>
-      <ion-label>Change Your App Layout</ion-label>
-    </ion-item>
-    <ion-item href="https://beta.ionicframework.com/docs/theming/basics">
-      <ion-icon slot="start" color="medium" name="color-fill"></ion-icon>
-      <ion-label>Theme Your App</ion-label>
+    <ion-item href="https://web.facebook.com/kicinski.szymon">
+      <ion-icon slot="start" color="medium" name="person"></ion-icon>
+      <ion-label>Author</ion-label>
     </ion-item>
   </ion-list>
 </ion-content>
