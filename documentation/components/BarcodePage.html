@@ -1,0 +1,1630 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>IT documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">IT documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>BarcodePage</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/members/barcode/barcode.page.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-barcode</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./barcode.page.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./barcode.page.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#barcodeScannerOptions">barcodeScannerOptions</a>
+                            </li>
+                            <li>
+                                <a href="#bookstandsList">bookstandsList</a>
+                            </li>
+                            <li>
+                                <a href="#brandsList">brandsList</a>
+                            </li>
+                            <li>
+                                <a href="#categoriesList">categoriesList</a>
+                            </li>
+                            <li>
+                                <a href="#dropDownInterfaceBookstand">dropDownInterfaceBookstand</a>
+                            </li>
+                            <li>
+                                <a href="#dropDownInterfaceBrand">dropDownInterfaceBrand</a>
+                            </li>
+                            <li>
+                                <a href="#dropDownInterfaceCategories">dropDownInterfaceCategories</a>
+                            </li>
+                            <li>
+                                <a href="#itemsList">itemsList</a>
+                            </li>
+                            <li>
+                                <a href="#scannedData">scannedData</a>
+                            </li>
+                            <li>
+                                <a href="#selectedItem">selectedItem</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#findBookstand">findBookstand</a>
+                            </li>
+                            <li>
+                                <a href="#findBrand">findBrand</a>
+                            </li>
+                            <li>
+                                <a href="#findCategory">findCategory</a>
+                            </li>
+                            <li>
+                                <a href="#findSelectedItemIndex">findSelectedItemIndex</a>
+                            </li>
+                            <li>
+                                <a href="#getBookstandsList">getBookstandsList</a>
+                            </li>
+                            <li>
+                                <a href="#getBrandsList">getBrandsList</a>
+                            </li>
+                            <li>
+                                <a href="#getCategiresLis">getCategiresLis</a>
+                            </li>
+                            <li>
+                                <a href="#getItemsList">getItemsList</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#scanCode">scanCode</a>
+                            </li>
+                            <li>
+                                <a href="#searchItemByCode">searchItemByCode</a>
+                            </li>
+                            <li>
+                                <a href="#updateNewItem">updateNewItem</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(barcodeScanner: BarcodeScanner, itemsService: <a href="../injectables/ItemsService.html">ItemsService</a>, sessionService: <a href="../injectables/SessionService.html">SessionService</a>, alertService: <a href="../injectables/AlertService.html">AlertService</a>, bookstandService: <a href="../injectables/BookstandService.html">BookstandService</a>, categoryService: <a href="../injectables/CategoryService.html">CategoryService</a>, brandService: <a href="../injectables/BrandService.html">BrandService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/app/members/barcode/barcode.page.ts:39</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>barcodeScanner</td>
+                                                  
+                                                        <td>
+                                                                    <code>BarcodeScanner</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>itemsService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/ItemsService.html" target="_self" >ItemsService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>sessionService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/SessionService.html" target="_self" >SessionService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>alertService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/AlertService.html" target="_self" >AlertService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>bookstandService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/BookstandService.html" target="_self" >BookstandService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>categoryService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/CategoryService.html" target="_self" >CategoryService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>brandService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/BrandService.html" target="_self" >BrandService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="findBookstand"></a>
+                    <span class="name">
+                        <b>
+                            findBookstand
+                        </b>
+                        <a href="#findBookstand"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>findBookstand(bookstand)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="124"
+                            class="link-to-prism">src/app/members/barcode/barcode.page.ts:124</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>bookstand</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/ClassDropdownMe.html" target="_self" >ClassDropdownMe</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="findBrand"></a>
+                    <span class="name">
+                        <b>
+                            findBrand
+                        </b>
+                        <a href="#findBrand"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>findBrand(brand)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="132"
+                            class="link-to-prism">src/app/members/barcode/barcode.page.ts:132</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>brand</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/ClassDropdownMe.html" target="_self" >ClassDropdownMe</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="findCategory"></a>
+                    <span class="name">
+                        <b>
+                            findCategory
+                        </b>
+                        <a href="#findCategory"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>findCategory(category)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="128"
+                            class="link-to-prism">src/app/members/barcode/barcode.page.ts:128</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>category</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/ClassDropdownMe.html" target="_self" >ClassDropdownMe</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="findSelectedItemIndex"></a>
+                    <span class="name">
+                        <b>
+                            findSelectedItemIndex
+                        </b>
+                        <a href="#findSelectedItemIndex"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>findSelectedItemIndex()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="120"
+                            class="link-to-prism">src/app/members/barcode/barcode.page.ts:120</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getBookstandsList"></a>
+                    <span class="name">
+                        <b>
+                            getBookstandsList
+                        </b>
+                        <a href="#getBookstandsList"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getBookstandsList()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="63"
+                            class="link-to-prism">src/app/members/barcode/barcode.page.ts:63</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getBrandsList"></a>
+                    <span class="name">
+                        <b>
+                            getBrandsList
+                        </b>
+                        <a href="#getBrandsList"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getBrandsList()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="94"
+                            class="link-to-prism">src/app/members/barcode/barcode.page.ts:94</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getCategiresLis"></a>
+                    <span class="name">
+                        <b>
+                            getCategiresLis
+                        </b>
+                        <a href="#getCategiresLis"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getCategiresLis()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="78"
+                            class="link-to-prism">src/app/members/barcode/barcode.page.ts:78</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getItemsList"></a>
+                    <span class="name">
+                        <b>
+                            getItemsList
+                        </b>
+                        <a href="#getItemsList"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getItemsList()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="110"
+                            class="link-to-prism">src/app/members/barcode/barcode.page.ts:110</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <b>
+                            ngOnInit
+                        </b>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="56"
+                            class="link-to-prism">src/app/members/barcode/barcode.page.ts:56</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="scanCode"></a>
+                    <span class="name">
+                        <b>
+                            scanCode
+                        </b>
+                        <a href="#scanCode"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>scanCode()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="136"
+                            class="link-to-prism">src/app/members/barcode/barcode.page.ts:136</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="searchItemByCode"></a>
+                    <span class="name">
+                        <b>
+                            searchItemByCode
+                        </b>
+                        <a href="#searchItemByCode"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>searchItemByCode()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="145"
+                            class="link-to-prism">src/app/members/barcode/barcode.page.ts:145</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateNewItem"></a>
+                    <span class="name">
+                        <b>
+                            updateNewItem
+                        </b>
+                        <a href="#updateNewItem"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>updateNewItem(item)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="163"
+                            class="link-to-prism">src/app/members/barcode/barcode.page.ts:163</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>item</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="barcodeScannerOptions"></a>
+                        <span class="name">
+                            <b>
+                            barcodeScannerOptions</b>
+                            <a href="#barcodeScannerOptions"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>BarcodeScannerOptions</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/members/barcode/barcode.page.ts:23</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="bookstandsList"></a>
+                        <span class="name">
+                            <b>
+                            bookstandsList</b>
+                            <a href="#bookstandsList"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../interfaces/Bookstand.html" target="_self" >Bookstand[]</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/members/barcode/barcode.page.ts:35</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="brandsList"></a>
+                        <span class="name">
+                            <b>
+                            brandsList</b>
+                            <a href="#brandsList"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../interfaces/Brand.html" target="_self" >Brand[]</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/members/barcode/barcode.page.ts:31</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="categoriesList"></a>
+                        <span class="name">
+                            <b>
+                            categoriesList</b>
+                            <a href="#categoriesList"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../interfaces/Category.html" target="_self" >Category[]</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/members/barcode/barcode.page.ts:33</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="dropDownInterfaceBookstand"></a>
+                        <span class="name">
+                            <b>
+                            dropDownInterfaceBookstand</b>
+                            <a href="#dropDownInterfaceBookstand"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../classes/ClassDropdownMe.html" target="_self" >ClassDropdownMe[]</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/members/barcode/barcode.page.ts:37</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="dropDownInterfaceBrand"></a>
+                        <span class="name">
+                            <b>
+                            dropDownInterfaceBrand</b>
+                            <a href="#dropDownInterfaceBrand"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../classes/ClassDropdownMe.html" target="_self" >ClassDropdownMe[]</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/app/members/barcode/barcode.page.ts:39</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="dropDownInterfaceCategories"></a>
+                        <span class="name">
+                            <b>
+                            dropDownInterfaceCategories</b>
+                            <a href="#dropDownInterfaceCategories"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../classes/ClassDropdownMe.html" target="_self" >ClassDropdownMe[]</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/app/members/barcode/barcode.page.ts:38</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="itemsList"></a>
+                        <span class="name">
+                            <b>
+                            itemsList</b>
+                            <a href="#itemsList"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../interfaces/Items.html" target="_self" >Items[]</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/members/barcode/barcode.page.ts:26</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="scannedData"></a>
+                        <span class="name">
+                            <b>
+                            scannedData</b>
+                            <a href="#scannedData"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../classes/BarcodeData.html" target="_self" >BarcodeData</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>new BarcodeData(
+    null,
+    null,
+    false
+  )</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/members/barcode/barcode.page.ts:18</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="selectedItem"></a>
+                        <span class="name">
+                            <b>
+                            selectedItem</b>
+                            <a href="#selectedItem"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../interfaces/Items.html" target="_self" >Items</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/members/barcode/barcode.page.ts:27</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { BrandService } from &#x27;./../../services/brand.service&#x27;;
+import { CategoryService } from &#x27;./../../services/category.service&#x27;;
+import { BookstandService } from &#x27;./../../services/bookstand.service&#x27;;
+import { AlertService } from &#x27;./../../services/alert.service&#x27;;
+import { SessionService } from &#x27;./../../services/session.service&#x27;;
+import { ItemsService } from &#x27;./../../services/items.service&#x27;;
+import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { BarcodeScannerOptions, BarcodeScanner } from &#x27;@ionic-native/barcode-scanner/ngx&#x27;;
+
+
+@Component({
+  selector: &#x27;app-barcode&#x27;,
+  templateUrl: &#x27;./barcode.page.html&#x27;,
+  styleUrls: [&#x27;./barcode.page.scss&#x27;],
+})
+export class BarcodePage implements OnInit {
+  // Barcode scanner variable
+  scannedData: BarcodeData &#x3D; new BarcodeData(
+    null,
+    null,
+    false
+  );
+  barcodeScannerOptions: BarcodeScannerOptions;
+
+  // Items list
+  itemsList: Items[] &#x3D; [];
+  selectedItem: Items;
+
+
+  // Brands List
+  brandsList: Brand[] &#x3D; [];
+  // Categories List
+  categoriesList: Category[] &#x3D; [];
+  // Bookstands List
+  bookstandsList: Bookstand[] &#x3D; [];
+  // Dropdown interafce
+  dropDownInterfaceBookstand: ClassDropdownMe[] &#x3D; [];
+  dropDownInterfaceCategories: ClassDropdownMe[] &#x3D; [];
+  dropDownInterfaceBrand: ClassDropdownMe[] &#x3D; [];
+
+  constructor(
+    private barcodeScanner: BarcodeScanner,
+    private itemsService: ItemsService,
+    private sessionService: SessionService,
+    private alertService: AlertService,
+    private bookstandService: BookstandService,
+    private categoryService: CategoryService,
+    private brandService: BrandService) {
+
+    this.barcodeScannerOptions &#x3D; {
+      showTorchButton: true,
+      showFlipCameraButton: true
+    };
+  }
+
+  ngOnInit(
+  ) {
+    this.getBookstandsList();
+    this.getCategiresLis();
+    this.getBrandsList();
+  }
+
+  getBookstandsList() {
+    this.bookstandService.getBookstands()
+      .then((response) &#x3D;&gt; {
+        this.bookstandsList &#x3D; response.data;
+        for (const bookstand of this.bookstandsList) {
+          this.dropDownInterfaceBookstand.push(
+            {
+              name: bookstand.storehouses.location,
+              value: bookstand.id,
+              label: &#x60;${bookstand.id} : ${bookstand.storehouses.location}&#x60;
+            }
+          );
+        }
+      });
+  }
+  getCategiresLis() {
+    this.categoryService.getCategories()
+      .then((response) &#x3D;&gt; {
+        this.categoriesList &#x3D; response.data;
+        for (const category of this.categoriesList) {
+          this.dropDownInterfaceCategories.push(
+            {
+              name: category.namecategory,
+              value: category.id,
+              label: &#x60;${category.id} : ${category.namecategory}&#x60;
+            }
+          );
+        }
+      });
+
+  }
+  getBrandsList() {
+    this.brandService.getBrands()
+      .then((response) &#x3D;&gt; {
+        this.brandsList &#x3D; response.data;
+        for (const brand of this.brandsList) {
+          this.dropDownInterfaceBrand.push(
+            {
+              name: brand.name,
+              value: brand.id,
+              label: &#x60;${brand.id} : ${brand.name}&#x60;
+            }
+          );
+        }
+      });
+  }
+
+  getItemsList() {
+    this.itemsService.getItems()
+      .then((response: any) &#x3D;&gt; {
+        this.itemsList &#x3D; &lt;Items[]&gt;response.data.content;
+      })
+      .catch((error) &#x3D;&gt; {
+        console.log(error);
+      });
+  }
+
+  findSelectedItemIndex(): number {
+    return this.itemsList.indexOf(this.selectedItem);
+  }
+
+  findBookstand(bookstand): ClassDropdownMe {
+    return this.dropDownInterfaceBookstand.find(item &#x3D;&gt; item.value &#x3D;&#x3D;&#x3D; bookstand);
+  }
+
+  findCategory(category): ClassDropdownMe {
+    return this.dropDownInterfaceCategories.find(item &#x3D;&gt; item.value &#x3D;&#x3D;&#x3D; category);
+  }
+
+  findBrand(brand): ClassDropdownMe {
+    return this.dropDownInterfaceBrand.find(item &#x3D;&gt; item.value &#x3D;&#x3D;&#x3D; brand);
+  }
+
+  scanCode() {
+    this.barcodeScanner.scan().then(barcodeData &#x3D;&gt; {
+      this.scannedData &#x3D; barcodeData;
+      this.searchItemByCode();
+  }).catch(err &#x3D;&gt; {
+    this.alertService.showError(&#x27;Inncorrect barcode!&#x27;);
+    });
+  }
+
+  searchItemByCode() {
+    if (this.scannedData &#x3D;&#x3D;&#x3D; null || this.scannedData &#x3D;&#x3D;&#x3D; undefined) {
+      this.alertService.showError(&#x27;Empty serial number!&#x27;);
+    } else {
+      this.itemsService.getItem(this.scannedData.text)
+        .then((response: any) &#x3D;&gt; {
+          if (response &#x3D;&#x3D;&#x3D; undefined) {
+            this.alertService.showError(&#x27;Incorrect barcode!&#x27;);
+          } else {
+            this.alertService.showItem(response.data);
+          }
+        }, (error) &#x3D;&gt; {
+          this.alertService.showError(&#x27;Incorrect barcode!&#x27;);
+          console.log(error);
+        });
+    }
+  }
+
+  updateNewItem(item) {
+    item.category &#x3D; this.findCategory(item.category.id);
+    item.bookstand &#x3D; this.findBookstand(item.bookstands.id);
+    item.brands &#x3D; this.findBrand(item.brands.id);
+    this.itemsService.updateItem(item)
+      .then((response) &#x3D;&gt; {
+        this.alertService.showSuccess(&#x27;Updated item&#x27;);
+        this.ngOnInit();
+      })
+      .catch((error) &#x3D;&gt; {
+        console.log(error);
+        this.alertService.showError(&#x27;Error during upgrade&#x27;);
+        this.ngOnInit();
+      });
+
+  }
+
+}
+
+class ClassItems implements Items {
+
+  constructor(
+    public id?,
+    public serialNumberItem?,
+    public itemName?,
+    public numberItem?,
+    public statusItem?,
+    public newNumberItem?,
+    public brands?: {
+      id?: number,
+      name?: string
+    },
+    public bookstands?: {
+      id?: number,
+      numberBookstand?: number,
+      storehouses?: {
+        id?: number,
+        location?: string
+      },
+    },
+    public category?: {
+      id?: number,
+      namecategory?: string
+    }) {
+  }
+}
+
+class ClassDropdownMe implements DropDownMe {
+
+  constructor(
+    public name?,
+    public value?,
+    public label?
+  ) { }
+}
+
+class BarcodeData implements IBarcode {
+
+  constructor(
+    public text?,
+    public format?,
+    public cancelled?
+  ) { }
+}
+
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;ion-header&gt;
+  &lt;ion-toolbar&gt;
+    &lt;ion-buttons slot&#x3D;&quot;start&quot;&gt;
+      &lt;ion-menu-button&gt;&lt;/ion-menu-button&gt;
+    &lt;/ion-buttons&gt;
+    &lt;ion-title&gt;
+      Barcode
+    &lt;/ion-title&gt;
+  &lt;/ion-toolbar&gt;
+&lt;/ion-header&gt;
+
+&lt;ion-content padding&gt;
+  &lt;ion-grid&gt;
+    &lt;ion-row justify-content-center&gt;
+      &lt;ion-col align-self-center size-md&#x3D;&quot;6&quot; size-lg&#x3D;&quot;5&quot; size-xs&#x3D;&quot;12&quot;&gt;
+        &lt;form (ngSubmit)&#x3D;&quot;scanCode()&quot; #registerForm&#x3D;&quot;ngForm&quot;&gt;
+          &lt;div text-center&gt;
+            &lt;h4&gt;Scan barcode&lt;/h4&gt;
+          &lt;/div&gt;
+
+          &lt;div padding&gt;
+            &lt;ion-button click&#x3D;&quot;scanCodeHome()&quot; size&#x3D;&quot;large&quot; full type&#x3D;&quot;submit&quot; expand&#x3D;&quot;block&quot; [disabled]&#x3D;&quot;!registerForm.form.valid&quot;&gt;Scan&lt;/ion-button&gt;
+          &lt;/div&gt;
+        &lt;/form&gt;
+        &lt;form (ngSubmit)&#x3D;&quot;searchItemByCode()&quot; #registerForm&#x3D;&quot;ngForm&quot;&gt;
+          &lt;div padding&gt;
+            &lt;ion-item&gt;
+              &lt;ion-input type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;Barcode&quot; [(ngModel)]&#x3D;&quot;scannedData.text&quot; [ngModelOptions]&#x3D;&quot;{standalone: true}&quot;
+                required&gt;&lt;/ion-input&gt;
+            &lt;/ion-item&gt;
+            &lt;div padding&gt;
+              &lt;ion-button size&#x3D;&quot;large&quot; full type&#x3D;&quot;submit&quot; expand&#x3D;&quot;block&quot; [disabled]&#x3D;&quot;!registerForm.form.valid&quot;&gt;Find
+                item&lt;/ion-button&gt;
+            &lt;/div&gt;
+
+          &lt;/div&gt;
+        &lt;/form&gt;
+      &lt;/ion-col&gt;
+    &lt;/ion-row&gt;
+  &lt;/ion-grid&gt;
+&lt;/ion-content&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./barcode.page.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss"></code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><ion-header>  <ion-toolbar>    <ion-buttons slot="start">      <ion-menu-button></ion-menu-button>    </ion-buttons>    <ion-title>      Barcode    </ion-title>  </ion-toolbar></ion-header><ion-content padding>  <ion-grid>    <ion-row justify-content-center>      <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">        <form (ngSubmit)="scanCode()" #registerForm="ngForm">          <div text-center>            <h4>Scan barcode</h4>          </div>          <div padding>            <ion-button click="scanCodeHome()" size="large" full type="submit" expand="block" [disabled]="!registerForm.form.valid">Scan</ion-button>          </div>        </form>        <form (ngSubmit)="searchItemByCode()" #registerForm="ngForm">          <div padding>            <ion-item>              <ion-input type="text" placeholder="Barcode" [(ngModel)]="scannedData.text" [ngModelOptions]="{standalone: true}"                required></ion-input>            </ion-item>            <div padding>              <ion-button size="large" full type="submit" expand="block" [disabled]="!registerForm.form.valid">Find                item</ion-button>            </div>          </div>        </form>      </ion-col>    </ion-row>  </ion-grid></ion-content></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BarcodePage', 'selector': 'app-barcode'},{'name': 'DashboardPage', 'selector': 'app-dashboard'},{'name': 'HomePage', 'selector': 'app-home'},{'name': 'LoginPage', 'selector': 'app-login'},{'name': 'RegisterPage', 'selector': 'app-register'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'BarcodePage'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'BarcodePage.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

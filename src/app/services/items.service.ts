@@ -78,6 +78,7 @@ export class ItemsService {
     }
 
     updateItemAlert(item, data) {
+        debugger;
         const path = API_URL + `/items/update`;
         const body = {
             serialNumberItem: item.serialNumberItem,

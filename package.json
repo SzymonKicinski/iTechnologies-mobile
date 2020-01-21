@@ -9,7 +9,8 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "compodoc": "npx compodoc -p src/tsconfig.app.json"
   },
   "private": true,
   "dependencies": {
@@ -27,6 +28,7 @@
     "@ionic-native/status-bar": "5.0.0-beta.21",
     "@ionic/angular": "4.0.0-rc.1",
     "@ionic/storage": "^2.2.0",
+    "and": "0.0.3",
     "axios": "^0.18.0",
     "cordova-android": "7.1.4",
     "cordova-plugin-advanced-http": "^2.0.4",

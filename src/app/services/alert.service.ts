@@ -143,6 +143,7 @@ export class AlertService {
                 }, {
                     text: 'Ok',
                     handler: data => {
+                        debugger;
                         if (
                             item.category === null ||
                             item.serialNumberItem === null ||
@@ -150,7 +151,8 @@ export class AlertService {
                             item.id === null ||
                             item.brands === null ||
                             item.itemName === null ||
-                            item.newNumberItem === null ||
+                            // item.newNumberItem === null ||
+                            data.newTotalityOfItem === null ||
                             item.statusItem === null ||
                             item.bookstands == null
                         ) {
@@ -166,7 +168,18 @@ export class AlertService {
                                     .catch((error => {
                                         this.showError('Server error');
                                     }));
+                            } else if (Number(data.newTotalityOfItem)) {
+                                this.itemsService.updateItemAlert(item, data.newTotalityOfItem)
+                                    .then((response => {
+                                        if (response !== null ) {
+                                            this.showSuccess('Item updated');
+                                        }
+                                    }))
+                                    .catch((error => {
+                                        this.showError('Server error');
+                                    }));
                             }
+
                         }
                     }
                 }
